@@ -8,7 +8,7 @@
  * @section DESCRIPTION
  * This program get a string from the user, and turn all uppercase letter into lowercase
  * letters, and all lowercase into uppercase. It changes digits between 0 and 5 to 0, and
- * larger digits, to 8. The rest of charachters remain the same.
+ * larger digits, to 8. The rest of characters remain the same.
  */
 // ------------------------------ includes ------------------------------
 #include <stdio.h>
@@ -24,6 +24,14 @@
 #define CHANGE_TO_UPPERCASE(x) (x - 32)
 #define CHANGE_TO_LOWERCASE(x) (x + 32)
 #define NONE 0
+#define THE_CHARACTER_LOWER_A 'a'
+#define THE_CHARACTER_LOWER_Z 'z'
+#define THE_CHARACTER_CAPITAL_A 'A'
+#define THE_CHARACTER_CAPITAL_Z 'Z'
+#define THE_CHARACTER_5 '5'
+#define THE_CHARACTER_9 '9'
+#define THE_CHARACTER_8 '8'
+#define THE_CHARACTER_0 '0'
 
 char userInput[51];
 char changedString[51];
@@ -40,21 +48,21 @@ int main()
     while (userInput[c] != END_OF_STRING)
     {
         char cur = userInput[c];
-        if (cur >= 'A' && cur <= 'Z') // if cur is an Uppercase letter.
+        if (cur >= THE_CHARACTER_CAPITAL_A && cur <= THE_CHARACTER_CAPITAL_Z)
         {
             changedString[c] = CHANGE_TO_LOWERCASE(cur);
         }
-        else if (cur >= 'a' && cur <= 'z') // if cur is an Lowercase letter.
+        else if (cur >= THE_CHARACTER_LOWER_A && cur <= THE_CHARACTER_LOWER_Z)
         {
             changedString[c] = CHANGE_TO_UPPERCASE(cur);
         }
-        else if (cur >= '5' && cur <= '9') // if cur is a digit between 5 and 9.
+        else if (cur >= THE_CHARACTER_5 && cur <= THE_CHARACTER_9)
         {
-            changedString[c] = '8';
+            changedString[c] = THE_CHARACTER_8;
         }
-        else if (cur >= '0' && cur < '5') // if cur is a digit between 0 and 5.
+        else if (cur >= THE_CHARACTER_0 && cur < THE_CHARACTER_5)
         {
-            changedString[c] = '0';
+            changedString[c] = THE_CHARACTER_0;
         }
         else
         {
