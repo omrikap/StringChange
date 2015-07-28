@@ -33,7 +33,8 @@ char changedString[51];
  * @brief The main function, performs the manipulation on the string.
  * @return 0, to tell the system the program ended as expected.
  */
-int main() {
+int main()
+{
     scanf(GET_STRING_UNTIL_RETURN_HIT, userInput);
     int c = 0;
     while (userInput[c] != END_OF_STRING)
@@ -42,21 +43,25 @@ int main() {
         if (cur >= 'A' && cur <= 'Z') // if cur is an Uppercase letter.
         {
             changedString[c] = CHANGE_TO_LOWERCASE(cur);
-        } else if (cur >= 'a' && cur <= 'z') // if cur is an Lowercase letter.
+        }
+        else if (cur >= 'a' && cur <= 'z') // if cur is an Lowercase letter.
         {
             changedString[c] = CHANGE_TO_UPPERCASE(cur);
-        } else if (cur >= '5' && cur <= '9') // if cur is a digit between 5 and 9.
+        }
+        else if (cur >= '5' && cur <= '9') // if cur is a digit between 5 and 9.
         {
             changedString[c] = '8';
-        } else if (cur >= '0' && cur < '5') // if cur is a digit between 0 and 5.
+        }
+        else if (cur >= '0' && cur < '5') // if cur is a digit between 0 and 5.
         {
             changedString[c] = '0';
-        } else
+        }
+        else
         {
             changedString[c] = cur;
         }
         c++;
     }
-    printf("\"%s\" -> \"%s\"", userInput, changedString);
+    printf("\"%s\" -> \"%s\"\n", userInput, changedString);
     return NONE;
 }
